@@ -33,7 +33,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px 100px;
+  padding: 50px 10%;
   position: relative;
   color: #2d3058;
   background-color: #ffffff;
@@ -64,23 +64,20 @@ header p {
 }
 
 .presentations {
-  padding: 50px 100px;
-  padding-bottom: 150px;
+  padding: 50px 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #f0f0f0;
 }
 
 .presentations div {
-  width: 500px;
-  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,14 +90,14 @@ header p {
           flex-direction: column;
 }
 
-.presentations div .img-a {
+.presentations div .a-img {
   position: relative;
 }
 
-.presentations div .img-a img {
+.presentations div .a-img img {
   border-radius: 10px;
   background-color: #2d3058;
-  width: 100%;
+  max-height: 300px;
   margin-bottom: 20px;
   -webkit-user-drag: none;
   -webkit-user-select: none;
@@ -109,10 +106,10 @@ header p {
           user-select: none;
 }
 
-.presentations div .img-a::before {
+.presentations div .a-img::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   width: 100%;
   height: 1px;
   background-color: #2d3058;
@@ -125,7 +122,7 @@ header p {
   border: none;
   color: #2d3058;
   background: none;
-  margin-top: 20px;
+  margin-top: 30px;
   background: none;
   padding: 10px 15px;
   font-size: 18px;
@@ -134,20 +131,20 @@ header p {
 }
 
 .presentations div button:hover {
-  -webkit-transition: 100ms;
-  transition: 100ms;
+  -webkit-transition: 150ms;
+  transition: 150ms;
   border-bottom: 3px solid #2d3058;
 }
 
 .presentations div button:active {
-  -webkit-transition: 200ms;
-  transition: 200ms;
+  -webkit-transition: 150ms;
+  transition: 150ms;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
 
 .hero-text {
-  padding: 50px 100px;
+  padding: 50px 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,7 +154,7 @@ header p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 40px;
+  padding: 30px 100px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -188,7 +185,7 @@ header p {
 }
 
 .shop-wrapper {
-  padding: 50px 100px;
+  padding: 50px 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,6 +203,10 @@ header p {
   background-color: #ffffff;
 }
 
+.shop-wrapper img {
+  width: 400px;
+}
+
 .shop-wrapper button {
   outline: none;
   border: none;
@@ -214,20 +215,33 @@ header p {
   margin-top: 20px;
   background: none;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
+  border-bottom: 3px solid #ffffff;
   cursor: pointer;
 }
 
+.shop-wrapper button:hover {
+  -webkit-transition: 150ms;
+  transition: 150ms;
+  border-bottom: 3px solid #2d3058;
+}
+
 .shop-wrapper button:active {
-  -webkit-transition: 200ms;
-  transition: 200ms;
+  -webkit-transition: 150ms;
+  transition: 150ms;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
 
+.shop-wrapper p {
+  font-size: 18px;
+  margin-top: 30px;
+  text-align: center;
+}
+
 .info-wrapper {
-  padding: 50px 100px;
+  padding: 50px 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,7 +275,7 @@ header p {
 }
 
 .info-wrapper.info-wrapper-alt-cream span {
-  color: #667eea;
+  color: #008bce;
   font-weight: 500;
 }
 
@@ -273,7 +287,7 @@ header p {
 }
 
 .description {
-  padding: 50px 100px;
+  padding: 50px 10%;
   width: 100%;
   background-color: #ffffff;
 }
@@ -306,7 +320,7 @@ header p {
 }
 
 .wrapper {
-  padding: 50px 100px;
+  padding: 50px 10%;
   width: 100%;
   background-image: linear-gradient(135deg, #2d3058 0%, #4a61ca 100%);
   display: -webkit-box;
@@ -325,6 +339,7 @@ header p {
 .wrapper.wrapper-alt {
   color: #2d3058;
   background-image: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  padding-top: 0;
 }
 
 .wrapper h2 {
@@ -405,9 +420,43 @@ header p {
 }
 
 footer {
+  padding: 50px 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 10%;
   width: 100%;
   height: 150px;
-  background-color: #2d3058;
+  background-image: linear-gradient(135deg, #2d3058 0%, #4a61ca 100%);
+  color: #ffffff;
+}
+
+footer span {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer span i {
+  margin-right: 5px;
+}
+
+footer span p {
+  margin-left: 5px;
 }
 
 @media (max-width: 1500px) {
