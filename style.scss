@@ -74,17 +74,6 @@ header {
     }
 }
 
-.hero-text {
-    @include padding;
-    @include center;
-    margin-top: 40px;
-    flex-direction: column;
-    text-align: center;
-    font-size: 20px;
-    color: $white;
-    background-image: linear-gradient(135deg, $primary 0%, #4a61ca 100%);
-}
-
 .presentations {
     @include padding;
     padding-bottom: 150px;
@@ -118,7 +107,7 @@ header {
                 position: absolute;
                 bottom: 0;
                 width: 100%;
-                height: 2px;
+                height: 1px;
                 background-color: $primary;
                 z-index: 10;
             }
@@ -141,12 +130,37 @@ header {
 
             &:hover {
                 transition: 100ms;
-                border-bottom: 3px solid #4f5492;
-                color: #4f5492;
+                border-bottom: 3px solid $primary;
             }
             &:active {
                 transition: 200ms;
                 transform: translateY(3px);
+            }
+        }
+    }
+}
+
+.hero-text {
+    @include padding;
+    @include center;
+    // align-items: flex-start;
+    margin-top: 40px;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    color: $white;
+    background-image: linear-gradient(135deg, $primary 0%, #4a61ca 100%);
+
+    span {
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 30px;
+
+        p {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }
@@ -162,9 +176,21 @@ header {
     button {
         outline: none;
         border: none;
+        color: $primary;
         background: none;
-        font-size: 20px;
+        margin-top: 20px;
+        // border: 3px solid $primary;
+        // background-color: $white;
+        background: none;
+        padding: 10px 15px;
+        font-size: 18px;
         font-weight: 500;
+        cursor: pointer;
+
+        &:active {
+            transition: 200ms;
+            transform: translateY(3px);
+        }
     }
 }
 
@@ -176,6 +202,23 @@ header {
     font-size: 20px;
     color: $white;
     background-image: linear-gradient(135deg, $primary 0%, #4a61ca 100%);
+    &.info-wrapper-alt {
+        background-image: linear-gradient(135deg, $white 0%, $white 100%);
+        color: $primary;
+    }
+
+    &.info-wrapper-alt-cream {
+        @include radius;
+        background-image: linear-gradient(135deg, $white 0%, $white 100%);
+        color: $primary;
+        margin: 30px 150px 0 150px;
+        padding: 30px 0;
+
+        span {
+            color: #667eea;
+            font-weight: 500;
+        }
+    }
 
     img {
         margin-bottom: 30px;
@@ -226,7 +269,7 @@ header {
     color: $white;
     &.wrapper-alt {
         color: $primary;
-        background-image: linear-gradient(135deg, $secondary 0%, $secondary 100%);
+        background-image: linear-gradient(135deg, $white 0%, $white 100%);
     }
 
     h2 {
@@ -281,6 +324,12 @@ header {
             font-size: 15px;
         }
     }
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+    background-color: $primary;
 }
 
 @media (max-width: 1500px) {
