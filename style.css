@@ -51,6 +51,21 @@ header {
   background-color: #ffffff;
 }
 
+@media (max-width: 1000px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 @media (max-width: 1140px) {
   header {
     padding: 50px 5%;
@@ -82,7 +97,9 @@ header img {
 
 @media (max-width: 1000px) {
   header img {
-    display: none;
+    position: relative;
+    left: 0;
+    margin-bottom: 30px;
   }
 }
 

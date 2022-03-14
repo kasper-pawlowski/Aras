@@ -59,6 +59,11 @@ button {
 }
 
 header {
+    @media (max-width: 1000px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
     @include center;
     @include padding;
     width: 100%;
@@ -67,14 +72,16 @@ header {
     background-color: $white;
 
     img {
+        @media (max-width: 1000px) {
+            position: relative;
+            left: 0;
+            margin-bottom: 30px;
+        }
         position: absolute;
         width: 200px;
         left: 50px;
         -webkit-user-drag: none;
         user-select: none;
-        @media (max-width: 1000px) {
-            display: none;
-        }
     }
 
     div {
