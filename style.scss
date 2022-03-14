@@ -14,6 +14,15 @@
 
 @mixin padding {
     padding: 50px 10%;
+    @media (max-width: 1140px) {
+        padding: 50px 5%;
+    }
+    @media (min-width: 1500px) {
+        padding: 50px 15%;
+    }
+    @media (min-width: 1700px) {
+        padding: 50px 20%;
+    }
 }
 
 $white: #ffffff;
@@ -31,13 +40,16 @@ $blue: #008bce;
 }
 
 body {
-    // background-image: url(https://www.aras.de/projects/default/images/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
     background-color: $secondary;
     color: $primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
 }
 
 input,
@@ -49,6 +61,7 @@ button {
 header {
     @include center;
     @include padding;
+    width: 100%;
     position: relative;
     color: $primary;
     background-color: $white;
@@ -59,6 +72,9 @@ header {
         left: 50px;
         -webkit-user-drag: none;
         user-select: none;
+        @media (max-width: 1000px) {
+            display: none;
+        }
     }
 
     div {
@@ -75,18 +91,65 @@ header {
     }
 }
 
+.hero-text {
+    @include center;
+    @include radius;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    color: $white;
+    background-image: linear-gradient(135deg, $white 0%, $white 100%);
+    color: $primary;
+    margin: 30px 10%;
+    padding: 30px;
+
+    span {
+        color: $blue;
+        font-weight: 500;
+    }
+
+    @media (max-width: 1140px) {
+        margin: 30px 5%;
+    }
+    @media (min-width: 1500px) {
+        margin: 30px 15%;
+    }
+    @media (min-width: 1700px) {
+        margin: 30px 20%;
+    }
+}
+
 .presentations {
+    @media (max-width: 1140px) {
+        flex-direction: column;
+    }
     @include padding;
-    // padding-bottom: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include center;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
     background-color: $secondary;
 
     div {
+        @media (max-width: 1140px) {
+            width: 100%;
+            height: auto;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+            &:first-child {
+                margin-bottom: 30px;
+            }
+        }
         display: flex;
         align-items: center;
         flex-direction: column;
+        width: calc(50% - 15px);
+        &:first-child {
+            margin-right: 15px;
+        }
+        &:last-child {
+            margin-left: 15px;
+        }
 
         .a-img {
             position: relative;
@@ -94,7 +157,7 @@ header {
             img {
                 @include radius;
                 background-color: $primary;
-                max-height: 300px;
+                width: 100%;
                 margin-bottom: 20px;
                 -webkit-user-drag: none;
                 user-select: none;
@@ -103,7 +166,7 @@ header {
             &::before {
                 content: '';
                 position: absolute;
-                bottom: -20px;
+                bottom: 0;
                 width: 100%;
                 height: 1px;
                 background-color: $primary;
@@ -117,11 +180,12 @@ header {
             border: none;
             color: $primary;
             background: none;
-            margin-top: 30px;
+            margin-top: 10px;
             background: none;
             padding: 10px 15px;
             font-size: 18px;
             font-weight: 500;
+            border-bottom: 3px solid $secondary;
             cursor: pointer;
 
             &:hover {
@@ -136,10 +200,11 @@ header {
     }
 }
 
-.hero-text {
+.info-text {
     @include padding;
     @include center;
-    padding: 30px 100px;
+    width: 100%;
+    margin-top: 50px;
     flex-direction: column;
     text-align: center;
     font-size: 20px;
@@ -147,17 +212,18 @@ header {
     background-image: linear-gradient(135deg, $primary 0%, #4a61ca 100%);
 
     span {
+        @media (max-width: 1140px) {
+            flex-direction: column;
+            p {
+                &:first-child {
+                    margin-bottom: 30px;
+                }
+            }
+        }
         width: 90%;
         display: flex;
         justify-content: space-evenly;
         margin-top: 30px;
-
-        p {
-            margin-bottom: 10px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
     }
 }
 
@@ -169,6 +235,9 @@ header {
     background-color: $white;
 
     img {
+        @media (max-width: 1140px) {
+            width: 300px;
+        }
         width: 400px;
     }
 
@@ -184,6 +253,7 @@ header {
         font-weight: 500;
         border-bottom: 3px solid $white;
         cursor: pointer;
+
         &:hover {
             transition: 150ms;
             border-bottom: 3px solid $primary;
@@ -218,8 +288,14 @@ header {
         @include radius;
         background-image: linear-gradient(135deg, $white 0%, $white 100%);
         color: $primary;
-        margin: 30px 150px 0 150px;
-        padding: 30px 0;
+        margin: 30px 10%;
+        padding: 30px 50px;
+        @media (min-width: 1500px) {
+            margin: 30px 15%;
+        }
+        @media (min-width: 1700px) {
+            margin: 30px 20%;
+        }
 
         span {
             color: $blue;
@@ -281,20 +357,23 @@ header {
     }
 
     h2 {
+        text-align: center;
         font-size: 24px;
         margin-bottom: 40px;
     }
 
     ul {
+        @media (max-width: 1140px) {
+            grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+        }
         width: 100%;
-        display: flex;
-        flex-flow: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(calc(50% - 30px), auto));
+        grid-gap: 30px;
     }
 
     li {
         @include center;
-        width: calc(50% - 20px);
-        margin: 10px 10px;
         text-decoration: none;
         list-style-type: none;
 
@@ -338,11 +417,17 @@ footer {
     @include padding;
     @include center;
     flex-direction: column;
+    text-align: center;
     padding: 30px 10%;
     width: 100%;
     height: 150px;
     background-image: linear-gradient(135deg, $primary 0%, #4a61ca 100%);
     color: $white;
+
+    .footer__p {
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
 
     span {
         margin-top: 5px;
@@ -356,29 +441,3 @@ footer {
         }
     }
 }
-
-@media (max-width: 1500px) {
-    header {
-        h1 {
-            font-size: 32px;
-        }
-    }
-}
-
-@media (min-width: 1500px) {
-    @mixin padding {
-        padding: 50px 20%;
-    }
-}
-
-// $breakpoints: (
-//     phone: 640px,
-//     tablet: 768px,
-//     desktop: 1024px,
-// ) !default;
-
-// @include media('>phone', '<tablet') {
-// }
-
-// @include media('>tablet', '<950px') {
-// }
